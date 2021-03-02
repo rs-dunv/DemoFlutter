@@ -24,8 +24,11 @@ class WebviewLibTwo extends StatelessWidget {
           )),
           onWebViewCreated: (InAppWebViewController controller) {
             webView = controller;
+            print("webview: ${webView}");
           },
-          onLoadStart: (InAppWebViewController controller, String url) {},
+          onLoadStart: (InAppWebViewController controller, String url) {
+            print("webview 1 $url");
+          },
           onLoadStop: (InAppWebViewController controller, String url) async {},
           onProgressChanged:
               (InAppWebViewController controller, int progress) {},
