@@ -26,6 +26,7 @@ dependencies:
   webview_flutter: ^1.0.7
   flutter_webview_plugin: ^0.3.11
   flutter_inappwebview: ^4.0.0+4
+  table_calendar: ^2.3.3
 
 
   # The following adds the Cupertino Icons font to your application.

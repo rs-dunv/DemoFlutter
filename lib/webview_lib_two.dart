@@ -22,14 +22,23 @@ class WebviewLibTwo extends StatelessWidget {
               crossPlatform: InAppWebViewOptions(
             debuggingEnabled: true,
           )),
-          onWebViewCreated: (InAppWebViewController controller) {
+          onWebViewCreated: (InAppWebViewController controller) async {
             webView = controller;
             print("webview: ${webView}");
+            var result = await webView.getHtml();
+            var progress = await webView.getProgress();
+            var isLoading = await webView.isLoading();
+            print("result: $progress");
+            print("result: $result");
+            print("isLoading: $isLoading");
           },
           onLoadStart: (InAppWebViewController controller, String url) {
             print("webview 1 $url");
           },
-          onLoadStop: (InAppWebViewController controller, String url) async {},
+          onLoadStop: (InAppWebViewController controller, String url) async {
+            var result = await webView.getHtml();
+            print("result $result");
+          },
           onProgressChanged:
               (InAppWebViewController controller, int progress) {},
         ),
